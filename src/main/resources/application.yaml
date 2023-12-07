@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:dev}
+    username: ${POSTGRES_USERNAME:dev}
+    password: ${POSTGRES_PASSWORD:bekind23}
+    driver-class-name: org.postgresql.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+s3:
+  bucket: sample
+  region: us-east-1
+  endpoint: http://localhost:9000
+  access-id: admin
+  secret-key: password
