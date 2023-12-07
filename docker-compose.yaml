@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   postgres-db:
-    container_name: tesseract-postgres
     image: postgres # use latest official postgres version
     restart: always
     environment:
