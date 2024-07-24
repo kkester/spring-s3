@@ -19,7 +19,12 @@ public class S3HealthIndicator extends AbstractHealthIndicator {
 
     @Override
     protected void doHealthCheck(Health.Builder builder) throws Exception {
-        ListBucketsResponse listBucketsResponse = client.listBuckets();
-        builder.up().withDetail("bucketSize", listBucketsResponse.buckets().size());
+        try {
+            ListBucketsResponse listBucketsResponse = client.listBuckets();
+            builder.up().withDetail("connectionSuccessful", true);
+            builder.up().withDetail("bucketSize", listBucketsResponse.buckets().size());
+        } catch (Exception e) {
+            builder.down().withDetail("connectionSuccessful", false);
+        }
     }
 }

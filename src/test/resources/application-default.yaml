@@ -2,3 +2,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:~/db/testdb
     driver-class-name:
+
+management:
+  server:
+    port: 8080
