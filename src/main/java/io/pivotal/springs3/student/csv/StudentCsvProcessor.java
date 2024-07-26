@@ -40,7 +40,7 @@ public class StudentCsvProcessor {
             .parse();
         studentEntities.forEach(studentCsv -> {
             log.info("Saving student {}", studentCsv);
-            studentService.save(studentCsv);
+            studentService.persist(studentCsv);
         });
     }
 }

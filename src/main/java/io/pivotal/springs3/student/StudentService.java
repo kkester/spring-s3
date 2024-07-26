@@ -1,7 +1,6 @@
 package io.pivotal.springs3.student;
 
 import io.pivotal.springs3.student.api.Student;
-import io.pivotal.springs3.student.csv.StudentCsv;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,8 +16,8 @@ public class StudentService {
     private final StudentRepository studentRepository;
     private final S3Adapter s3Adapter;
 
-    public Student saveStudent(Student student) {
-        StudentEntity savedStudentEntity = save(student);
+    public Student storeStudent(IStudent student) {
+        StudentEntity savedStudentEntity = persist(student);
         Student savedStudent = Student.builder()
             .id(savedStudentEntity.getId())
             .firstName(savedStudentEntity.getFirstName())
@@ -38,7 +37,7 @@ public class StudentService {
             .toList();
     }
 
-    public StudentEntity save(IStudent student) {
+    public StudentEntity persist(IStudent student) {
         StudentEntity studentEntity = StudentEntity.builder()
             .id(UUID.randomUUID())
             .firstName(student.getFirstName())

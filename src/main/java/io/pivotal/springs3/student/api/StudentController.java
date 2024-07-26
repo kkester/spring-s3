@@ -10,12 +10,12 @@ import java.util.List;
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
-    
+
     private final StudentService studentService;
 
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+        return studentService.storeStudent(student);
     }
 
     @GetMapping
