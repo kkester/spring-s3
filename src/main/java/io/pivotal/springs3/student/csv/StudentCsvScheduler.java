@@ -1,4 +1,4 @@
-package io.pivotal.springs3.student;
+package io.pivotal.springs3.student.csv;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class StudentCsvProcessor {
+public class StudentCsvScheduler {
 
-    private final StudentService studentService;
+    private final StudentCsvProcessor studentCsvProcessor;
 
     @Scheduled(fixedDelay = 30000)
     @SneakyThrows
@@ -19,7 +19,7 @@ public class StudentCsvProcessor {
 
         log.info("Scheduler Started");
 
-        studentService.checkForStudentFiles();
+        studentCsvProcessor.checkForStudentFiles();
 
         log.info("Scheduler finished.");
     }

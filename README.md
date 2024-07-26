@@ -26,8 +26,8 @@ By default, the application runs at [http://localhost:8080](http://localhost:808
 Run your application using the `./gradlew bootRun` command.
 
 Verify everything is working by performing the following
-1. Open `http://localhost:8081/actuator/health` in a browser window
-2. Type `http://localhost:8080/swagger-ui.html` in the same browser tab and validate that you receive the `Swagger UI Api Documentation` page. 
+1. Open [http://localhost:8081/actuator/health](http://localhost:8081/actuator/health) in a browser window
+2. Type [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) in the same browser tab and validate that you receive the `Swagger UI Api Documentation` page. 
 
 ## Running Tests
 
