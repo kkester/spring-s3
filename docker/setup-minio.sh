@@ -27,7 +27,7 @@ cat > /tmp/${POLICY_NAME}.json <<EOL
         },
         {
             "Effect": "Allow",
-            "Action": [3
+            "Action": [
                 "s3:GetObject",
                 "s3:PutObject",
                 "s3:DeleteObject"
